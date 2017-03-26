@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="msg">
+      <ion-segment-button value="goods" (ionSelect)="changeMsg('goods')">
+        商品
+      </ion-segment-button>
+      <ion-segment-button value="details" (ionSelect)="changeMsg('details')">
+        详情
+      </ion-segment-button>
+      <ion-segment-button value="evaluate" (ionSelect)="changeMsg('evaluate')">
+        评价
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="msg">
+    <div *ngSwitchCase="'goods'"><page-goods></page-goods></div>
+    <div *ngSwitchCase="'details'"><page-goods-deatails></page-goods-deatails></div>
+    <div *ngIf="msg=='evaluate'"><page-goods-evaluate></page-goods-evaluate></div>
+  </div>
+</ion-content>
