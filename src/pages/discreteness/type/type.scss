@@ -3,3 +3,12 @@ page-type {
     width: 50vh !important;
   }
 }
+.item-md ion-thumbnail ion-img, .item-md ion-thumbnail img{
+	width:100%;
+}
+.list-md .item-block .item-inner,.item-md.item-block .item-inner{
+	border:0;
+}
+.card-content-md{
+	padding:5px 10px;
+}

@@ -19,6 +19,6 @@ export class TypePage {
     console.log('ionViewDidLoad TypePage');
   }
   goodsDetail(): void {
-    this.nav.setRoot(GoodsDetailPage);
+    this.nav.push(GoodsDetailPage);
   }
 }
