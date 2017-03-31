@@ -1,12 +1,8 @@
-import { Component, ViewChild,OnInit } from '@angular/core';
-import {Nav, Platform, NavController} from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
-
-import { TabsPage } from '../pages/tabs/tabs';
-import { RecommendPage } from '../pages/recommend/recommend';
-
-import { SettingsPage } from '../pages/settings/settings';
-import { AccountPage } from '../pages/account/account';
+import {Component, ViewChild, OnInit} from "@angular/core";
+import {Nav, Platform, NavController} from "ionic-angular";
+import {StatusBar, Splashscreen} from "ionic-native";
+import {TabsPage} from "../pages/tabs/tabs";
+import {RecommendPage} from "../pages/recommend/recommend";
 import {GoodsTypeService} from "../providers/goods-type-service";
 @Component({
   templateUrl: 'app.html'
