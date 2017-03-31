@@ -13,7 +13,8 @@ import {GoodsDetailPage} from "../../goods-detail/goods-detail";
   templateUrl: 'type.html'
 })
 export class TypePage {
-  constructor(public nav: NavController,public navCtrl: NavController, public navParams: NavParams) {}
+  //constructor(public nav: NavController,public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public nav: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TypePage');
