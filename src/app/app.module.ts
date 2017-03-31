@@ -17,6 +17,9 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { SettingsPage } from '../pages/settings/settings';
 import { AccountPage } from '../pages/account/account';
+import {GoodsTypeService} from "../providers/goods-type-service";
+import {HttpService} from "../providers/http-service";
+import {StorageService} from "../providers/storage-service";
 
 @NgModule({
   declarations: [
@@ -60,6 +63,6 @@ import { AccountPage } from '../pages/account/account';
     AccountPage,
     SettingsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},GoodsTypeService,HttpService,StorageService]
 })
 export class AppModule {}
