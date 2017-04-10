@@ -13,7 +13,7 @@ import {StorageService} from "./storage-service";
 */
 @Injectable()
 export class GoodsTypeService {
-  API_URL = "http://localhost:8080";
+  API_URL = "http://181.215.150.214:8080";
   constructor(
     private http: Http,
     private httpService: HttpService,
