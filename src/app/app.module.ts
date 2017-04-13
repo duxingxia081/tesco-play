@@ -20,6 +20,7 @@ import { AccountPage } from '../pages/account/account';
 import {GoodsTypeService} from "../providers/goods-type-service";
 import {HttpService} from "../providers/http-service";
 import {StorageService} from "../providers/storage-service";
+import {GoodsService} from "../providers/goods-service"
 
 @NgModule({
   declarations: [
@@ -63,6 +64,6 @@ import {StorageService} from "../providers/storage-service";
     AccountPage,
     SettingsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},GoodsTypeService,HttpService,StorageService]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},GoodsTypeService,HttpService,StorageService,GoodsService]
 })
 export class AppModule {}

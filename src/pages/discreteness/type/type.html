@@ -1,202 +1,33 @@
 <ion-grid>
-  <!-- <h6 style="padding-left:5px;color: #757575;font-size:inherit;">热门推荐</h6>
-  <ion-row>
-    <ion-col col-6>
-      <div style="background: #fff">
-        <img src="assets/images/slide1.jpg" style="max-width: 100% !important">
-        <div style="padding:10px">
-          <a (click)="goodsDetail()">香水</a>
-          <p style="margin:0px">这是一款香奈儿香水</p>
-        </div>
-      </div>
-    </ion-col>
-    <ion-col col-6>
-      <div style="background: #fff">
-        <img src="assets/images/slide1.jpg" style="max-width: 100% !important">
-        <div style="padding:10px">
-          <a (click)="goodsDetail()">香水</a>
-          <p style="margin:0px">这是一款香奈儿香水</p>
-        </div>
-      </div>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col col-6>
-      <div style="background: #fff">
-        <img src="assets/images/slide1.jpg" style="max-width: 100% !important">
-        <div style="padding:10px">
-          <a (click)="goodsDetail()">香水</a>
-          <p style="margin:0px">这是一款香奈儿香水</p>
-        </div>
-      </div>
-    </ion-col>
-    <ion-col col-6>
-      <div style="background: #fff">
-        <img src="assets/images/slide1.jpg" style="max-width: 100% !important">
-        <div style="padding:10px">
-          <a (click)="goodsDetail()">香水</a>
-          <p style="margin:0px">这是一款香奈儿香水</p>
-        </div>
-      </div>
-    </ion-col>
-  </ion-row>
-  <h6 style="padding-left:5px;color: #757575;font-size:inherit;">个人用品</h6>
-  <ion-row>
-    <ion-col col-6>
-      <div style="background: #fff">
-        <img src="assets/images/slide1.jpg" style="max-width: 100% !important">
-        <div style="padding:10px">
-          <a (click)="goodsDetail()">香水</a>
-          <p style="margin:0px">这是一款香奈儿香水</p>
-        </div>
-      </div>
-    </ion-col>
-    <ion-col col-6>
-      <div style="background: #fff">
-        <img src="assets/images/slide1.jpg" style="max-width: 100% !important">
-        <div style="padding:10px">
-          <a (click)="goodsDetail()">香水</a>
-          <p style="margin:0px">这是一款香奈儿香水</p>
-        </div>
-      </div>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col col-6>
-      <div style="background: #fff">
-        <img src="assets/images/slide1.jpg" style="max-width: 100% !important">
-        <div style="padding:10px">
-          <a (click)="goodsDetail()">香水</a>
-          <p style="margin:0px">这是一款香奈儿香水</p>
-        </div>
-      </div>
-    </ion-col>
-    <ion-col col-6>
-      <div style="background: #fff">
-        <img src="assets/images/slide1.jpg" style="max-width: 100% !important">
-        <div style="padding:10px">
-          <a (click)="goodsDetail()">香水</a>
-          <p style="margin:0px">这是一款香奈儿香水</p>
-        </div>
-      </div>
-    </ion-col>
-  </ion-row> -->
-
-
   <h6 style="padding-left:5px;color: #757575;font-size:inherit;">热门推荐</h6>
   <ion-row>
-    <ion-col col-6 (click)="goodsDetail()">
-      <ion-card style='margin:0;width: 100%'>
-        <img src="assets/images/slide1.jpg">
+    <ion-col col-6 (click)="goodsDetail()" *ngFor="let goods of listGoods">
+      <ion-card style='margin:0;width: 100%' *ngIf="goods.goodsTypeId==1">
+        <img src="{{goods.firstImage}}">
         <ion-card-content>
           <p style='font-size: 1em'>
-            <span style="font-size: 0.5em;background: #f14b1a;color:#fff;padding:2px;margin-right: 3px;border-radius: 10%">精选</span>这是一款香奈儿香水
+            <span style="font-size: 0.5em;background: #f14b1a;color:#fff;padding:2px;margin-right: 3px;border-radius: 10%">精选</span>{{goods.goodsDesc}}
           </p>
         </ion-card-content>
         <div style="overflow: hidden;padding:0 7px 7px 7px">
-          <p style="float: left"><em style="font-size: 1.2em;color: orange;font-style: normal;margin-right: 3px">￥899</em><span style="font-size: 0.5em;color: #868383">1000人付款</span></p>
-          <span style="float: right;margin-top: 6px;color:#aaa"><ion-icon name="ios-more"></ion-icon></span>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-col col-6 (click)="goodsDetail()">
-      <ion-card style='margin:0;width: 100%'>
-        <img src="assets/images/slide1.jpg">
-        <ion-card-content>
-          <p style='font-size: 1em'>
-            <span style="font-size: 0.5em;background: #f14b1a;color:#fff;padding:2px;margin-right: 3px;border-radius: 10%">精选</span>这是一款香奈儿香水
-          </p>
-        </ion-card-content>
-        <div style="overflow: hidden;padding:0 7px 7px 7px">
-          <p style="float: left"><em style="font-size: 1.2em;color: orange;font-style: normal;margin-right: 3px">￥899</em><span style="font-size: 0.5em;color: #868383">1000人付款</span></p>
-          <span style="float: right;margin-top: 6px;color:#aaa"><ion-icon name="ios-more"></ion-icon></span>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-col col-6 (click)="goodsDetail()">
-      <ion-card style='margin:0;width: 100%'>
-        <img src="assets/images/slide1.jpg">
-        <ion-card-content>
-          <p style='font-size: 1em'>
-            <span style="font-size: 0.5em;background: #f14b1a;color:#fff;padding:2px;margin-right: 3px;border-radius: 10%">精选</span>这是一款香奈儿香水
-          </p>
-        </ion-card-content>
-        <div style="overflow: hidden;padding:0 7px 7px 7px">
-          <p style="float: left"><em style="font-size: 1.2em;color: orange;font-style: normal;margin-right: 3px">￥899</em><span style="font-size: 0.5em;color: #868383">1000人付款</span></p>
-          <span style="float: right;margin-top: 6px;color:#aaa"><ion-icon name="ios-more"></ion-icon></span>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-col col-6 (click)="goodsDetail()">
-      <ion-card style='margin:0;width: 100%'>
-        <img src="assets/images/slide1.jpg">
-        <ion-card-content>
-          <p style='font-size: 1em'>
-            <span style="font-size: 0.5em;background: #f14b1a;color:#fff;padding:2px;margin-right: 3px;border-radius: 10%">精选</span>这是一款香奈儿香水
-          </p>
-        </ion-card-content>
-        <div style="overflow: hidden;padding:0 7px 7px 7px">
-          <p style="float: left"><em style="font-size: 1.2em;color: orange;font-style: normal;margin-right: 3px">￥899</em><span style="font-size: 0.5em;color: #868383">1000人付款</span></p>
+          <p style="float: left"><em style="font-size: 1.2em;color: orange;font-style: normal;margin-right: 3px">￥{{goods.money}}</em><span style="font-size: 0.5em;color: #868383">1000人付款</span></p>
           <span style="float: right;margin-top: 6px;color:#aaa"><ion-icon name="ios-more"></ion-icon></span>
         </div>
       </ion-card>
     </ion-col>
   </ion-row>
-
-  <h6 style="padding-left:5px;color: #757575;font-size:inherit;">个人用品</h6>
+  <h6 style="padding-left:5px;color: #757575;font-size:inherit;">医药保健</h6>
   <ion-row>
-    <ion-col col-6 (click)="goodsDetail()">
-      <ion-card style='margin:0;width: 100%'>
-        <img src="assets/images/slide1.jpg">
+    <ion-col col-6 (click)="goodsDetail()" *ngFor="let goods of listGoods">
+      <ion-card style='margin:0;width: 100%' *ngIf="goods.goodsTypeId==2">
+        <img src="{{goods.firstImage}}">
         <ion-card-content>
           <p style='font-size: 1em'>
-            <span style="font-size: 0.5em;background: #f14b1a;color:#fff;padding:2px;margin-right: 3px;border-radius: 10%">精选</span>这是一款香奈儿香水
+            <span style="font-size: 0.5em;background: #f14b1a;color:#fff;padding:2px;margin-right: 3px;border-radius: 10%">精选</span>{{goods.goodsDesc}}
           </p>
         </ion-card-content>
         <div style="overflow: hidden;padding:0 7px 7px 7px">
-          <p style="float: left"><em style="font-size: 1.2em;color: orange;font-style: normal;margin-right: 3px">￥899</em><span style="font-size: 0.5em;color: #868383">1000人付款</span></p>
-          <span style="float: right;margin-top: 6px;color:#aaa"><ion-icon name="ios-more"></ion-icon></span>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-col col-6 (click)="goodsDetail()">
-      <ion-card style='margin:0;width: 100%'>
-        <img src="assets/images/slide1.jpg">
-        <ion-card-content>
-          <p style='font-size: 1em'>
-            <span style="font-size: 0.5em;background: #f14b1a;color:#fff;padding:2px;margin-right: 3px;border-radius: 10%">精选</span>这是一款香奈儿香水
-          </p>
-        </ion-card-content>
-        <div style="overflow: hidden;padding:0 7px 7px 7px">
-          <p style="float: left"><em style="font-size: 1.2em;color: orange;font-style: normal;margin-right: 3px">￥899</em><span style="font-size: 0.5em;color: #868383">1000人付款</span></p>
-          <span style="float: right;margin-top: 6px;color:#aaa"><ion-icon name="ios-more"></ion-icon></span>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-col col-6 (click)="goodsDetail()">
-      <ion-card style='margin:0;width: 100%'>
-        <img src="assets/images/slide1.jpg">
-        <ion-card-content>
-          <p style='font-size: 1em'>
-            <span style="font-size: 0.5em;background: #f14b1a;color:#fff;padding:2px;margin-right: 3px;border-radius: 10%">精选</span>这是一款香奈儿香水
-          </p>
-        </ion-card-content>
-        <div style="overflow: hidden;padding:0 7px 7px 7px">
-          <p style="float: left"><em style="font-size: 1.2em;color: orange;font-style: normal;margin-right: 3px">￥899</em><span style="font-size: 0.5em;color: #868383">1000人付款</span></p>
-          <span style="float: right;margin-top: 6px;color:#aaa"><ion-icon name="ios-more"></ion-icon></span>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-col col-6 (click)="goodsDetail()">
-      <ion-card style='margin:0;width: 100%'>
-        <img src="assets/images/slide1.jpg">
-        <ion-card-content>
-          <p style='font-size: 1em'>
-            <span style="font-size: 0.5em;background: #f14b1a;color:#fff;padding:2px;margin-right: 3px;border-radius: 10%">精选</span>这是一款香奈儿香水
-          </p>
-        </ion-card-content>
-        <div style="overflow: hidden;padding:0 7px 7px 7px">
-          <p style="float: left"><em style="font-size: 1.2em;color: orange;font-style: normal;margin-right: 3px">￥899</em><span style="font-size: 0.5em;color: #868383">1000人付款</span></p>
+          <p style="float: left"><em style="font-size: 1.2em;color: orange;font-style: normal;margin-right: 3px">￥{{goods.money}}</em><span style="font-size: 0.5em;color: #868383">1000人付款</span></p>
           <span style="float: right;margin-top: 6px;color:#aaa"><ion-icon name="ios-more"></ion-icon></span>
         </div>
       </ion-card>

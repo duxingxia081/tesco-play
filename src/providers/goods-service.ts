@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {HttpService} from "./http-service";
 import {StorageService} from "./storage-service";
+import {OnInit} from "../../node_modules/@angular/core/src/metadata/lifecycle_hooks";
 
 /*
   Generated class for the GoodsService provider.
@@ -13,7 +14,7 @@ import {StorageService} from "./storage-service";
 @Injectable()
 export class GoodsService{
 
-  API_URL = "http://localhost:8080";
+  API_URL = "http://181.215.150.214:8080";
   constructor(
       private http: Http,
       private httpService: HttpService,

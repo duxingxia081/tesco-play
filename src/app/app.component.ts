@@ -13,8 +13,6 @@ export class MyApp implements OnInit {
   rootPage = TabsPage;
 
   pages: Array<{title: string, component: any}> = new Array();
-  pageList:any = "";
-
   constructor(public platform: Platform,private goodsTypeService: GoodsTypeService) {
     this.initializeApp();
   }
