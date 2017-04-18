@@ -12,6 +12,8 @@ import {GoodsDetailPage} from '../pages/goods-detail/goods-detail';
 import {GoodsPage} from '../pages/goods/goods';
 import {GoodsDeatailsPage} from '../pages/goods-deatails/goods-deatails';
 import {GoodsEvaluatePage} from '../pages/goods-evaluate/goods-evaluate';
+import { GoodsListPage } from '../pages/goods-list/goods-list';
+import { PopoverPage  } from '../pages/PopoverPage/PopoverPage';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -35,6 +37,8 @@ import {GoodsService} from "../providers/goods-service"
     GoodsPage,
     GoodsDeatailsPage,
     GoodsEvaluatePage,
+    GoodsListPage,
+    PopoverPage,
 
     AboutPage,
     ContactPage,
@@ -58,6 +62,7 @@ import {GoodsService} from "../providers/goods-service"
     GoodsPage,
     GoodsDeatailsPage,
     GoodsEvaluatePage,
+    PopoverPage,
 
     AboutPage,
     ContactPage,

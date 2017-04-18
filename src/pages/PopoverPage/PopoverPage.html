@@ -1,0 +1,17 @@
+<ion-list id="PopoverPage">
+  <div>
+    <h6>购买选择：</h6>
+    <ul>
+      <li *ngFor="let names of title;let i = index" [ngClass]="{'haveBorder': i == choseGoods}" (click)="choseNum(i)">
+        {{names.name}}
+      </li>
+    </ul>
+    <h6 style="float:left;clear: both">购买数量</h6>
+    <p>
+      <span class="left" (click)="reduce()">－</span>
+      <input type="text" value="{{num}}" [(ngModel)]="num">
+      <span class="right" (click)="add()">＋</span>
+    </p>
+  </div>
+</ion-list>
+<button ion-button full style="background:#f14b1a;margin-bottom: 0">立即购买</button>

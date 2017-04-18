@@ -21,21 +21,26 @@
 </ion-item-group>
 <ion-item-group>
   <ion-item-divider color="light"></ion-item-divider>
-  <ion-item>
+  <ion-item (click)="presentPopover($event)">
     <ion-note item-left>选择:</ion-note><ion-icon ios="ios-more" md="ios-more" item-right></ion-icon>
   </ion-item>
 </ion-item-group>
 <ion-list>
   <ion-item-divider color="light"></ion-item-divider>
   <ion-item>
-    <ion-note item-left>商品评价</ion-note>
+    <ion-note item-left class="comment">宝贝评价(7160)</ion-note>
   </ion-item>
-  <ion-item>
-    <div>★★★★</div>
-    <div>很好用，不错，好评</div>
+  <ion-item id="commentList">
+    <ion-avatar>
+      <img src="assets/images/slide1.jpg">
+    </ion-avatar>
+    <h2>用户名</h2>
+    <h3>很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评</h3>
+    <p>选择产品xxx</p>
   </ion-item>
-  <ion-item>
-    <div>★★★★</div>
-    <div>很好用，不错，好评</div>
+  <ion-item id="lookComment">
+    <h4>
+      <span (click)="jumpComment()">查看全部评论</span>
+    </h4>
   </ion-item>
 </ion-list>
