@@ -1,19 +1,15 @@
-import { Component } from '@angular/core';
+import { Component,Output,EventEmitter } from '@angular/core';
 import { NavController, NavParams,PopoverController,ViewController } from 'ionic-angular';
 import { PopoverPage } from '../PopoverPage/PopoverPage';
 import { GoodsEvaluatePage } from '../goods-evaluate/goods-evaluate';
 
-/*/!*
-  Generated class for the Goods page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*!/*/
 @Component({
   selector: 'page-goods',
   templateUrl: 'goods.html'
 })
 export class GoodsPage {
+
+  @Output() onVoted = new EventEmitter<void>();
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public popoverCtrl: PopoverController) {}
 
@@ -29,6 +25,6 @@ export class GoodsPage {
   }
 
   jumpComment():void{
-    this.navCtrl.push(GoodsEvaluatePage);
+    this.onVoted.emit();
   }
 }
