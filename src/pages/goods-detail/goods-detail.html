@@ -1,4 +1,4 @@
-<ion-header>
+<!--<ion-header>
   <ion-toolbar>
     <ion-segment [(ngModel)]="msg">
       <ion-segment-button value="goods" (ionSelect)="changeMsg('goods')">
@@ -19,5 +19,33 @@
     <div *ngSwitchCase="'goods'"><page-goods></page-goods></div>
     <div *ngSwitchCase="'details'"><page-goods-deatails></page-goods-deatails></div>
     <div *ngIf="msg=='evaluate'"><page-goods-evaluate></page-goods-evaluate></div>
+  </div>
+</ion-content>-->
+
+<ion-header>
+  <ion-navbar>
+    产品名
+  </ion-navbar>
+</ion-header>
+<ion-content id="goodsDetail">
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="msg">
+      <ion-segment-button value="goods" (ionSelect)="changeMsg('goods')">
+        商品
+      </ion-segment-button>
+      <ion-segment-button value="details" (ionSelect)="changeMsg('details')">
+        详情
+      </ion-segment-button>
+      <ion-segment-button value="evaluate" (ionSelect)="changeMsg('evaluate')">
+        评价
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+  <div [ngSwitch]="msg">
+    <div *ngSwitchCase="'goods'"><page-goods (onVoted)="msg='evaluate'"></page-goods></div>
+    <div *ngSwitchCase="'details'"><page-goods-deatails></page-goods-deatails></div>
+    <!--<div *ngIf="msg=='evaluate'"><page-goods-evaluate></page-goods-evaluate></div>-->
+    <div *ngSwitchCase="'evaluate'"><page-goods-evaluate></page-goods-evaluate></div>
   </div>
 </ion-content>

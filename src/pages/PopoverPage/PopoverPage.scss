@@ -1,0 +1,45 @@
+#PopoverPage>div{
+  padding:10px
+}
+#PopoverPage>div h6{
+  font-size: 1.3rem;
+  color:#333;
+}
+#PopoverPage>div ul{
+  margin:0;
+  padding:0;
+}
+#PopoverPage>div ul li{
+  list-style: none;
+  font-size: 1.3rem;
+  float: left;
+  margin-right: 5px;
+  border:1px solid #aaa;
+  text-align: center;
+  padding: 3px;
+  margin-bottom:5px;
+}
+#PopoverPage>div>span{
+  font-size: 1.3rem;
+}
+#PopoverPage>div>p{
+  float:right;
+}
+#PopoverPage>div>p span{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #ccc;
+  text-align: center;
+}
+#PopoverPage>div>p input{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+#PopoverPage>div ul li.haveBorder{
+  color:#fff;
+  border: 1px solid #f14b1a;
+  background: #f14b1a;
+}

@@ -1,0 +1,40 @@
+#listBorder .input-wrapper{
+  border-bottom: 1px solid #aaa;
+}
+#listBorder img{
+  width:60px;
+  height: 60px;
+  border-radius: 0;
+}
+#listBorder ion-label{
+  white-space: normal;
+}
+#listBorder h2{
+  font-size:1.4rem;
+  color:#666;
+}
+#listBorder h4{
+  font-size: 1rem;
+  color:#aaa;
+}
+#listBorder .label-md{
+  margin-bottom:5px;
+}
+#listBorder p em,#listBorder p i{
+  font-style: normal;
+}
+#listBorder p i{
+  font-size:1.8rem;
+}
+#listBorder p b{
+  color:#f14b1a;
+  font-size:1rem;
+  margin-right: 3px;
+}
+#listBorder p em span{
+  font-size:1rem;
+  color:#aaa;
+}
+#listBorder p>span{
+  float: right;
+}

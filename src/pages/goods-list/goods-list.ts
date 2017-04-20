@@ -1,27 +1,26 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {GoodsDetailPage} from "../goods-detail/goods-detail";
 
 /*
-  Generated class for the GoodsDetail page.
+  Generated class for the GoodsDeatails page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-goods-detail',
-  templateUrl: 'goods-detail.html'
+  selector: 'page-goods-list',
+  templateUrl: 'goods-list.html'
 })
-export class GoodsDetailPage {
+export class GoodsListPage {
 
-  msg = "goods";
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad GoodsDetailPage');
+    console.log('ionViewDidLoad GoodsDeatailsPage');
   }
-  changeMsg(massage:string):void
-  {
-    console.log("msg:"+massage);
-    this.msg=massage;
+
+  goodsDetail():void{
+    this.navCtrl.push(GoodsDetailPage);
   }
 }
