@@ -12,9 +12,11 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'goods-detail.html'
 })
 export class GoodsDetailPage {
-
+  goods:any;
   msg = "goods";
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.goods = navParams .get("goods");
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GoodsDetailPage');

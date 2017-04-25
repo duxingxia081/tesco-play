@@ -1,19 +1,19 @@
 <page-billboards></page-billboards>
 <ion-item-group>
   <ion-item>
-    <ion-note item-left  style="color: #000;">这是一个人工美女，美女可陪你聊天，陪你看电视，还有其他的好玩功能</ion-note>
+    <ion-note item-left  style="color: #000;">{{goods.goodsDesc}}</ion-note>
   </ion-item>
   <ion-item>
-    <div style="color: #ff0000;">￥12000.00</div>
+    <div style="color: #ff0000;">￥{{goods.money}}</div>
   </ion-item>
   <ion-item>
-    <span>快递 0.00</span><span>月销 23 件</span>
+    <span>快递 0.00</span><span>月销 {{goods.userBuyNum}} 件</span>
   </ion-item>
 </ion-item-group>
 <ion-item-group>
   <ion-item-divider color="light"></ion-item-divider>
   <ion-item>
-    购买可得300积分
+    购买可得{{goods.goodsPoints}}积分
   </ion-item>
   <ion-item>
     <ion-note item-left>正品保证。赠运费险</ion-note>
@@ -21,22 +21,22 @@
 </ion-item-group>
 <ion-item-group>
   <ion-item-divider color="light"></ion-item-divider>
-  <ion-item (click)="presentPopover($event)">
+  <ion-item (click)="presentPopover($event,goods)">
     <ion-note item-left>选择:</ion-note><ion-icon ios="ios-more" md="ios-more" item-right></ion-icon>
   </ion-item>
 </ion-item-group>
 <ion-list>
   <ion-item-divider color="light"></ion-item-divider>
   <ion-item>
-    <ion-note item-left class="comment">宝贝评价(7160)</ion-note>
+    <ion-note item-left class="comment">宝贝评价({{countGoodsEvaluate}})</ion-note>
   </ion-item>
-  <ion-item id="commentList">
+  <ion-item id="commentList" *ngFor="let goodsEvaluate of listGoodsEvaluate">
     <ion-avatar>
       <img src="assets/images/slide1.jpg">
     </ion-avatar>
     <h2>用户名</h2>
-    <h3>很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评</h3>
-    <p>选择产品xxx</p>
+    <h3>{{goodsEvaluate.goods_evaluate}}</h3>
+    <p>评价时间{{goodsEvaluate.goodsEvaluateDateStr}}</p>
   </ion-item>
   <ion-item id="lookComment">
     <h4>

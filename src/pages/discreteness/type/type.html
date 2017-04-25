@@ -1,16 +1,16 @@
 <ion-grid>
   <h6 style="padding-left:5px;color: #757575;font-size:inherit;margin:10px 0">热门推荐</h6>
   <ion-row>
-    <ion-col col-6 (click)="goodsDetail()" *ngFor="let goods of listGoods">
+    <ion-col col-6 (click)="goodsDetail(goods)" *ngFor="let goods of listGoods">
       <ion-card style='margin:0;width: 100%;height:220px' *ngIf="goods.goodsTypeId==1">
         <img src="{{goods.firstImage}}" style="height:120px">
         <ion-card-content style="padding:12px 10px">
           <p style='font-size: 1em;height: 40px;overflow: hidden;'>
-            <span style="font-size: 0.5em;background: #f14b1a;color:#fff;padding:2px;margin-right: 3px;border-radius: 10%">精选</span>{{goods.goodsDesc}}
+            <span style="font-size: 0.5em;background: #f14b1a;color:#fff;padding:2px;margin-right: 3px;border-radius: 10%">{{goods.goodsLevel}}</span>{{goods.goodsDesc}}
           </p>
         </ion-card-content>
         <div style="overflow: hidden;padding:0 7px 7px 7px">
-          <p style="float: left"><em style="font-size: 1.2em;color: orange;font-style: normal;margin-right: 3px">¥{{goods.money}}</em><span style="font-size: 0.5em;color: #868383">1000人付款</span></p>
+          <p style="float: left"><em style="font-size: 1.2em;color: orange;font-style: normal;margin-right: 3px">¥{{goods.money}}</em><span style="font-size: 0.5em;color: #868383">{{goods.userBuyNum}}人付款</span></p>
           <span style="float: right;margin-top: 6px;color:#aaa"><ion-icon name="ios-more"></ion-icon></span>
         </div>
       </ion-card>
@@ -18,16 +18,16 @@
   </ion-row>
   <h6 style="padding-left:5px;color: #757575;font-size:inherit;margin:10px 0">医药保健</h6>
   <ion-row>
-    <ion-col col-6 (click)="goodsDetail()" *ngFor="let goods of listGoods">
+    <ion-col col-6 (click)="goodsDetail(goods)" *ngFor="let goods of listGoods">
       <ion-card style='margin:0;width: 100%;height:220px' *ngIf="goods.goodsTypeId==2">
         <img src="{{goods.firstImage}}" style="height:120px">
         <ion-card-content style="padding:12px 10px">
           <p style='font-size: 1em;height: 40px;overflow: hidden;'>
-            <span style="font-size: 0.5em;background: #f14b1a;color:#fff;padding:2px;margin-right: 3px;border-radius: 10%">精选</span>{{goods.goodsDesc}}
+            <span style="font-size: 0.5em;background: #f14b1a;color:#fff;padding:2px;margin-right: 3px;border-radius: 10%">{{goods.goodsLevel}}</span>{{goods.goodsDesc}}
           </p>
         </ion-card-content>
         <div style="overflow: hidden;padding:0 7px 7px 7px">
-          <p style="float: left"><em style="font-size: 1.2em;color: orange;font-style: normal;margin-right: 3px">¥{{goods.money}}</em><span style="font-size: 0.5em;color: #868383">1000人付款</span></p>
+          <p style="float: left"><em style="font-size: 1.2em;color: orange;font-style: normal;margin-right: 3px">¥{{goods.money}}</em><span style="font-size: 0.5em;color: #868383">{{goods.userBuyNum}}人付款</span></p>
           <span style="float: right;margin-top: 6px;color:#aaa"><ion-icon name="ios-more"></ion-icon></span>
         </div>
       </ion-card>

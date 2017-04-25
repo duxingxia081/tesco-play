@@ -1,22 +1,19 @@
-import { Component } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {GoodsService} from "../../providers/goods-service";
 
-/*
-  Generated class for the GoodsEvaluate page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-goods-evaluate',
   templateUrl: 'goods-evaluate.html'
 })
-export class GoodsEvaluatePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GoodsEvaluatePage');
+export class GoodsEvaluatePage implements OnInit {
+  @Input('goods') goods:any;
+  listGoodsEvaluate:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private goodsService: GoodsService) {}
+  ngOnInit(): void {
+    this.goodsService.getGoodsData("/goods/listGoodsEvaluate&goodsId="+this.goods.goodsId).then((list) => {
+      this.listGoodsEvaluate = list;
+    });
   }
 
 }

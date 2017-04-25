@@ -5,12 +5,6 @@ import {HttpService} from "./http-service";
 import {StorageService} from "./storage-service";
 import {OnInit} from "../../node_modules/@angular/core/src/metadata/lifecycle_hooks";
 
-/*
-  Generated class for the GoodsService provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class GoodsService{
 
@@ -24,5 +18,7 @@ export class GoodsService{
     var url = this.API_URL + "/goods/listGoods";
     return this.httpService.httpGet(url);
   }
-
+  getGoodsData(url) {
+    return this.httpService.httpGet(this.API_URL + url);
+  }
 }

@@ -69,6 +69,6 @@ import {GoodsService} from "../providers/goods-service"
     AccountPage,
     SettingsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},GoodsTypeService,HttpService,StorageService,GoodsService]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},HttpService,StorageService,GoodsService]
 })
 export class AppModule {}

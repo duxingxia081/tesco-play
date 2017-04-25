@@ -43,9 +43,9 @@
   </ion-toolbar>
 
   <div [ngSwitch]="msg">
-    <div *ngSwitchCase="'goods'"><page-goods (onVoted)="msg='evaluate'"></page-goods></div>
+    <div *ngSwitchCase="'goods'"><page-goods [goods]="goods" (onVoted)="msg='evaluate'"></page-goods></div>
     <div *ngSwitchCase="'details'"><page-goods-deatails></page-goods-deatails></div>
     <!--<div *ngIf="msg=='evaluate'"><page-goods-evaluate></page-goods-evaluate></div>-->
-    <div *ngSwitchCase="'evaluate'"><page-goods-evaluate></page-goods-evaluate></div>
+    <div *ngSwitchCase="'evaluate'"><page-goods-evaluate [goods]="goods"></page-goods-evaluate></div>
   </div>
 </ion-content>
