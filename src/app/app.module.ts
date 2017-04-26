@@ -18,7 +18,7 @@ import { PopoverPage  } from '../pages/PopoverPage/PopoverPage';
 import { CartPage } from '../pages/cart/cart';
 import { PersonPage } from '../pages/person/person';
 import { SettingsPage } from '../pages/settings/settings';
-import { AccountPage } from '../pages/account/account';
+import { OrderPage } from '../pages/order/order';
 import {GoodsTypeService} from "../providers/goods-type-service";
 import {HttpService} from "../providers/http-service";
 import {StorageService} from "../providers/storage-service";
@@ -43,7 +43,7 @@ import {GoodsService} from "../providers/goods-service"
     CartPage,
     PersonPage,
     SettingsPage,
-    AccountPage,
+    OrderPage
 
   ],
   imports: [
@@ -66,7 +66,7 @@ import {GoodsService} from "../providers/goods-service"
 
     CartPage,
     PersonPage,
-    AccountPage,
+    OrderPage,
     SettingsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},GoodsTypeService,HttpService,StorageService,GoodsService]

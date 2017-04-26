@@ -15,6 +15,10 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-::-webkit-scrollbar {  
-  display: none !important;  
-}  
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
+  background: none;
+}

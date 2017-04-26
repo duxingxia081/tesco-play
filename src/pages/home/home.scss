@@ -2,7 +2,10 @@ page-home {
 
 }
 
-::-webkit-scrollbar {  
-  display: none !important;  
-}  
+::-webkit-scrollbar {
+  display: none !important;
+}
 
+#home .toolbar-title-md{
+  font-size:1.6rem;
+}

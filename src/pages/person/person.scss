@@ -1,3 +1,57 @@
-page-contact {
-
+#personName .toolbar-title-md{
+  font-size:1.6rem;
+}
+#person-content{
+  background:#F4F4F4;
+}
+#person-content table{
+  width: 100%;
+}
+#person-content table td{
+  text-align: center;
+}
+#person-table{
+  background: #fff;
+  padding:10px 0;
+  margin-bottom: 10px;
+}
+#set-up{
+  float: left;
+  margin-left: 10px;
+  font-size: 1.6rem;
+}
+#order>h3{
+  line-height:3rem;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  margin:0;
+  padding:5px 10px;
+}
+#order>h3>b{
+  font-size: 1.5rem;
+  color:#1C303C;
+}
+#order>h3>span{
+  float: right;
+  font-size:1.3rem;
+  color:#B0B0B0;
+}
+#order>h3>span>ion-icon{
+  font-size:1rem;
+  margin-left:5px;
+}
+#order>ul{
+  margin:0;
+  padding:0;
+  list-style: none;
+  background: #fff;
+  padding-bottom: 5px;
+  overflow: hidden;
+}
+#order>ul>li{
+  float: left;
+  text-align: center;
+  color:#949494;
+  font-size: 1.2rem;
+  width: 20%;
 }
