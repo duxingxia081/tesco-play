@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewController,NavParams } from 'ionic-angular';
-import {UserGoods} from "../../entity/UserGoods";
 import {StorageService} from "../../providers/storage-service";
+import {UserGoods} from "../../entity/UserGoods";
 
 @Component({
   templateUrl:'PopoverPage.html'

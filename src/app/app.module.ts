@@ -19,7 +19,6 @@ import { CartPage } from '../pages/cart/cart';
 import { PersonPage } from '../pages/person/person';
 import { SettingsPage } from '../pages/settings/settings';
 import { AccountPage } from '../pages/account/account';
-import {GoodsTypeService} from "../providers/goods-type-service";
 import {HttpService} from "../providers/http-service";
 import {StorageService} from "../providers/storage-service";
 import {GoodsService} from "../providers/goods-service"
