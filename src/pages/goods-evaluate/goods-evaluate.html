@@ -21,47 +21,14 @@
 <!--<span class="comment">宝贝评价(7160)</span>-->
 
 <div id="allComment">
-  <ion-list>
+  <ion-list *ngFor="let goodsEvaluate of listGoodsEvaluate">
     <ion-item class="commentList">
       <ion-avatar>
         <img src="assets/images/slide1.jpg">
       </ion-avatar>
       <h2>用户名</h2>
-      <h3>很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评</h3>
-      <p>选择产品xxx</p>
-    </ion-item>
-    <ion-item-divider color="light"></ion-item-divider>
-  </ion-list>
-  <ion-list>
-    <ion-item class="commentList">
-      <ion-avatar>
-        <img src="assets/images/slide1.jpg">
-      </ion-avatar>
-      <h2>用户名</h2>
-      <h3>很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评</h3>
-      <p>选择产品xxx</p>
-      <ion-item-divider color="light"></ion-item-divider>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-    <ion-item class="commentList">
-      <ion-avatar>
-        <img src="assets/images/slide1.jpg">
-      </ion-avatar>
-      <h2>用户名</h2>
-      <h3>很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评</h3>
-      <p>选择产品xxx</p>
-    </ion-item>
-    <ion-item-divider color="light"></ion-item-divider>
-  </ion-list>
-  <ion-list>
-    <ion-item class="commentList">
-      <ion-avatar>
-        <img src="assets/images/slide1.jpg">
-      </ion-avatar>
-      <h2>用户名</h2>
-      <h3>很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评很好用，不错，好评</h3>
-      <p>选择产品xxx</p>
+      <h3>{{goodsEvaluate.goods_evaluate}}</h3>
+      <p>评价时间{{goodsEvaluate.goodsEvaluateDateStr}}</p>
     </ion-item>
     <ion-item-divider color="light"></ion-item-divider>
   </ion-list>

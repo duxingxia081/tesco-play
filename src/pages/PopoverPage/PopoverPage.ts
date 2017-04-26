@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,PopoverController,ViewController } from 'ionic-angular';
+import { ViewController,NavParams } from 'ionic-angular';
+import {StorageService} from "../../providers/storage-service";
+import {UserGoods} from "../../entity/UserGoods";
 
-/*/!*
-  Generated class for the Goods page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*!/*/
 @Component({
   templateUrl:'PopoverPage.html'
 })
 export class PopoverPage {
-  constructor(public viewCtrl: ViewController) {}
+  goods:any;
+  userGoods:UserGoods;
+  constructor(public viewCtrl: ViewController,private storageService:StorageService,public navParams: NavParams) {
+    this.goods = navParams.get("goods");
+    this.userGoods = new UserGoods(1,0,1,this.goods.money);
+  }
   num=1;
   title=[
     {name:'chose1',id:0},
@@ -22,23 +23,26 @@ export class PopoverPage {
     {name:'chose6',id:5}
   ];
 
-  choseGoods:number;
-
   close() {
     this.viewCtrl.dismiss();
   }
 
   add():void{
-    this.num++;
+    this.userGoods.buyNum += 1
   }
 
   reduce():void{
     if(this.num>1){
-      this.num--;
+      this.userGoods.buyNum -= 1
     }
   }
 
   choseNum(num:number){
-    this.choseGoods = num;
+    this.userGoods.goodsBreed=num;
+    this.userGoods.goodsBreed=num;
+  }
+  addCart():void{
+    console.log(this.userGoods);
+    this.storageService.write(this.userGoods.goodsId.toString(),this.userGoods);
   }
 }

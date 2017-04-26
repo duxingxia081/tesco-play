@@ -1,24 +1,30 @@
-import { Component,Output,EventEmitter } from '@angular/core';
-import { NavController, NavParams,PopoverController,ViewController } from 'ionic-angular';
+import { Component,Output,EventEmitter,Input, OnInit } from '@angular/core';
+import { NavController, NavParams,PopoverController } from 'ionic-angular';
 import { PopoverPage } from '../PopoverPage/PopoverPage';
-import { GoodsEvaluatePage } from '../goods-evaluate/goods-evaluate';
+import {GoodsService} from "../../providers/goods-service";
 
 @Component({
   selector: 'page-goods',
   templateUrl: 'goods.html'
 })
-export class GoodsPage {
-
+export class GoodsPage implements OnInit {
+  @Input('goods') goods:any;
   @Output() onVoted = new EventEmitter<void>();
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,public popoverCtrl: PopoverController) {}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GoodsPage');
+  countGoodsEvaluate:number;
+  listGoodsEvaluate:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public popoverCtrl: PopoverController,private goodsService: GoodsService) {
+  }
+  ngOnInit(): void {
+    this.goodsService.getGoodsData("/goods/countGoodsEvaluate&goodsId="+this.goods.goodsId).then((count) => {
+      this.countGoodsEvaluate = count;
+    });
+    this.goodsService.getGoodsData("/goods/listGoodsEvaluate&goodsId="+this.goods.goodsId).then((list) => {
+      this.listGoodsEvaluate = list;
+    });
   }
 
-  presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(PopoverPage);
+  presentPopover(myEvent,goods) {
+    let popover = this.popoverCtrl.create(PopoverPage,{goods:goods});
     popover.present({
       ev: myEvent
     });
