@@ -12,6 +12,7 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'order.html'
 })
 export class OrderPage {
+  msg : string = 'allGoods';
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 

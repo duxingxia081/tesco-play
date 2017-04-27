@@ -8,6 +8,198 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content id="order">
+  <ion-toolbar no-border-top id="order-tab">
+    <ion-segment [(ngModel)]="msg">
+      <ion-segment-button value="allGoods">
+        全部
+      </ion-segment-button>
+      <ion-segment-button value="waitPayment">
+        待付款
+      </ion-segment-button>
+      <ion-segment-button value="waitSendOut">
+        待发货
+      </ion-segment-button>
+      <ion-segment-button value="waitTakeOver">
+        待收货
+      </ion-segment-button>
+      <ion-segment-button value="waitEvaluate">
+        待评价
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 
+  <div [ngSwitch]="msg">
+    <div *ngSwitchCase="'allGoods'" class="goodsStyle">
+      <div>
+        <p>
+          <span>天猫自营<ion-icon name="ios-arrow-forward-outline"></ion-icon></span>
+          <em>交易成功</em>
+        </p>
+        <div class="bg_white">
+          <table class="outside_table">
+            <tr>
+              <td><img src="assets/images/slide1.jpg" alt=""></td>
+              <td>
+                <table class="inside_table1">
+                  <tr>
+                    <td><div>台湾SOFINA苏菲娜芯美颜保湿日间防护乳防晒霜女SPF50蓝小花32ml</div></td>
+                  </tr>
+                  <tr>
+                    <td>颜色分类:xxxxxxxxx</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inside_table2">
+                  <tr>
+                    <td>¥299.00</td>
+                  </tr>
+                  <tr>
+                    <td><s>¥350.00</s></td>
+                  </tr>
+                  <tr>
+                    <td>×1</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <table class="outside_table">
+            <tr>
+              <td><img src="assets/images/slide1.jpg" alt=""></td>
+              <td>
+                <table class="inside_table1">
+                  <tr>
+                    <td><div>台湾SOFINA苏菲娜芯美颜保湿日间防护乳防晒霜女SPF50蓝小花32ml</div></td>
+                  </tr>
+                  <tr>
+                    <td>颜色分类:xxxxxxxxx</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inside_table2">
+                  <tr>
+                    <td>¥299.00</td>
+                  </tr>
+                  <tr>
+                    <td><s>¥350.00</s></td>
+                  </tr>
+                  <tr>
+                    <td>×1</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="total">
+          共<span>1</span>件产品 合计：<b>¥<em>299.00</em></b>(含运费¥<i>0.00</i>)
+        </div>
+        <div class="more">
+          <span>更多</span>
+          <ul>
+            <li>查看物流</li>
+            <li>换了卖钱</li>
+            <li>评价</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <p>
+          <span>天猫自营<ion-icon name="ios-arrow-forward-outline"></ion-icon></span>
+          <em>交易成功</em>
+        </p>
+        <table class="outside_table">
+          <tr>
+            <td><img src="assets/images/slide1.jpg" alt=""></td>
+            <td>
+              <table class="inside_table1">
+                <tr>
+                  <td><div>台湾SOFINA苏菲娜芯美颜保湿日间防护乳防晒霜女SPF50蓝小花32ml</div></td>
+                </tr>
+                <tr>
+                  <td>颜色分类:xxxxxxxxx</td>
+                </tr>
+              </table>
+            </td>
+            <td>
+              <table class="inside_table2">
+                <tr>
+                  <td>¥299.00</td>
+                </tr>
+                <tr>
+                  <td><s>¥350.00</s></td>
+                </tr>
+                <tr>
+                  <td>×1</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <div class="total">
+          共<span>1</span>件产品 合计：<b>¥<em>299.00</em></b>(含运费¥<i>0.00</i>)
+        </div>
+        <div class="more">
+          <span>更多</span>
+          <ul>
+            <li>查看物流</li>
+            <li>换了卖钱</li>
+            <li>评价</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <p>
+          <span>天猫自营<ion-icon name="ios-arrow-forward-outline"></ion-icon></span>
+          <em>交易成功</em>
+        </p>
+        <table class="outside_table">
+          <tr>
+            <td><img src="assets/images/slide1.jpg" alt=""></td>
+            <td>
+              <table class="inside_table1">
+                <tr>
+                  <td><div>台湾SOFINA苏菲娜芯美颜保湿日间防护乳防晒霜女SPF50蓝小花32ml</div></td>
+                </tr>
+                <tr>
+                  <td>颜色分类:xxxxxxxxx</td>
+                </tr>
+              </table>
+            </td>
+            <td>
+              <table class="inside_table2">
+                <tr>
+                  <td>¥299.00</td>
+                </tr>
+                <tr>
+                  <td><s>¥350.00</s></td>
+                </tr>
+                <tr>
+                  <td>×1</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <div class="total">
+          共<span>1</span>件产品 合计：<b>¥<em>299.00</em></b>(含运费¥<i>0.00</i>)
+        </div>
+        <div class="more">
+          <span>更多</span>
+          <ul>
+            <li>查看物流</li>
+            <li>换了卖钱</li>
+            <li>评价</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'waitPayment'">待付款</div>
+    <div *ngSwitchCase="'waitSendOut'">待发货</div>
+    <div *ngSwitchCase="'waitTakeOver'">待收货</div>
+    <div *ngSwitchCase="'waitEvaluate'">待评价</div>
+  </div>
 </ion-content>

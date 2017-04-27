@@ -18,12 +18,9 @@ import { PopoverPage  } from '../pages/PopoverPage/PopoverPage';
 import { CartPage } from '../pages/cart/cart';
 import { PersonPage } from '../pages/person/person';
 import { SettingsPage } from '../pages/settings/settings';
-<<<<<<< HEAD
 import { OrderPage } from '../pages/order/order';
 import {GoodsTypeService} from "../providers/goods-type-service";
-=======
 import { AccountPage } from '../pages/account/account';
->>>>>>> a8f574baf04a610f4d6403b0d1c4c79fcbd93876
 import {HttpService} from "../providers/http-service";
 import {StorageService} from "../providers/storage-service";
 import {GoodsService} from "../providers/goods-service"
