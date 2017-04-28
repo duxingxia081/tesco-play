@@ -1,4 +1,4 @@
-import {Component, ViewChild, Input} from '@angular/core';
+import {Component, ViewChild,OnInit, Input} from '@angular/core';
 import {Slides} from 'ionic-angular';
 import {GoodsService} from "../../../providers/goods-service";
 //注入轮播
@@ -7,10 +7,9 @@ import {GoodsService} from "../../../providers/goods-service";
     selector: 'page-billboards',
     templateUrl: 'billboards.html'
 })
-export class BillboardsPage {
-    @Input('goods') goods: any;
-    listGoodsImgs:any;
-    constructor(private goodsService: GoodsService) {
+export class BillboardsPage implements OnInit {
+    @Input('listGoodsImgs') listGoodsImgs: any;
+    constructor() {
     }
 
     @ViewChild('mySlider') slider: Slides;
@@ -18,12 +17,11 @@ export class BillboardsPage {
         autoplay: 2000,
         speed: 300
     };
+    ngAfterContentInit():void
+    {
 
-    ngOnInit() {
-        this.goodsService.getGoodsData("/goods/goodsImgs&goodsId="+this.goods.goodsId).then((list) => {
-            console.log(list);
-            this.listGoodsImgs = list;
-        });
+    }
+    ngOnInit():void {
         //页面加载完成后自己调用
         setInterval(() => {
             this.slider.slideNext(300, true);

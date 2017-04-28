@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
+import {GoodsService} from "../../providers/goods-service";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController) {
+  listGoodsImgs:any;
+  constructor(private goodsService: GoodsService) {
 
   }
-
+  ngOnInit(): void {
+    this.goodsService.getGoodsData("/goods/listTopGoods").then((list) => {
+      this.listGoodsImgs = list;
+    });
+  }
 }

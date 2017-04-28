@@ -63,6 +63,7 @@ import {GoodsService} from "../providers/goods-service"
     GoodsPage,
     GoodsDeatailsPage,
     GoodsEvaluatePage,
+    GoodsListPage,
     PopoverPage,
 
     CartPage,

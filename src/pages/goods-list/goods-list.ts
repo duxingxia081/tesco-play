@@ -1,26 +1,23 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component,OnInit } from '@angular/core';
+import { NavController,NavParams} from 'ionic-angular';
 import {GoodsDetailPage} from "../goods-detail/goods-detail";
-
-/*
-  Generated class for the GoodsDeatails page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+import {GoodsService} from "../../providers/goods-service";
 @Component({
   selector: 'page-goods-list',
   templateUrl: 'goods-list.html'
 })
-export class GoodsListPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GoodsDeatailsPage');
+export class GoodsListPage implements OnInit {
+  listGoods:any;
+  goodsType:any;
+  constructor(public nav: NavController,private goodsService: GoodsService, public navParams: NavParams) {
+    this.goodsType = navParams .get("goodsType");
   }
-
-  goodsDetail():void{
-    this.navCtrl.push(GoodsDetailPage);
+  ngOnInit(): void {
+    this.goodsService.getGoodsData("/goods/listGoodsByType&goodsType="+this.goodsType.goodsType).then((list) => {
+      this.listGoods = list;
+    });
+  }
+  goodsDetail(goods:any): void {
+    this.nav.push(GoodsDetailPage,{goods:goods});
   }
 }

@@ -12,7 +12,8 @@ export class GoodsPage implements OnInit {
   @Output() onVoted = new EventEmitter<void>();
   countGoodsEvaluate:number;
   listGoodsEvaluate:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public popoverCtrl: PopoverController,private goodsService: GoodsService) {
+  listGoodsImgs:any;
+  constructor( public popoverCtrl: PopoverController,private goodsService: GoodsService) {
   }
   ngOnInit(): void {
     this.goodsService.getGoodsData("/goods/countGoodsEvaluate&goodsId="+this.goods.goodsId).then((count) => {
@@ -21,8 +22,13 @@ export class GoodsPage implements OnInit {
     this.goodsService.getGoodsData("/goods/listGoodsEvaluate&goodsId="+this.goods.goodsId).then((list) => {
       this.listGoodsEvaluate = list;
     });
+    this.goodsService.getGoodsData("/goods/goodsImgs&goodsId="+this.goods.goodsId).then((list) => {
+      this.listGoodsImgs = list;
+    });
   }
+  ngOnChanges():void{
 
+  }
   presentPopover(myEvent,goods) {
     let popover = this.popoverCtrl.create(PopoverPage,{goods:goods});
     popover.present({

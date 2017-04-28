@@ -1,44 +1,22 @@
-<ion-list id="listBorder">
-  <ion-item (click)="goodsDetail()">
-    <ion-avatar item-left>
-      <img src="assets/images/slide1.jpg" alt="">
-    </ion-avatar>
-    <h2>台湾SOFINA苏菲娜芯美颜保湿日间防护乳防晒霜女SPF50蓝小花32ml</h2>
-    <h4>上海</h4>
-    <p>
-      <em>
-        <b>¥<i>155</i></b>
-        <span>1111人付款</span>
-      </em>
-      <span><ion-icon name="ios-more"></ion-icon></span>
-    </p>
-  </ion-item>
-  <ion-item (click)="goodsDetail()">
-    <ion-avatar item-left>
-      <img src="assets/images/slide1.jpg" alt="">
-    </ion-avatar>
-    <h2>台湾SOFINA苏菲娜芯美颜保湿日间防护乳防晒霜女SPF50蓝小花32ml</h2>
-    <h4>上海</h4>
-    <p>
-      <em>
-        <b>¥<i>155</i></b>
-        <span>1111人付款</span>
-      </em>
-      <span><ion-icon name="ios-more"></ion-icon></span>
-    </p>
-  </ion-item>
-  <ion-item (click)="goodsDetail()">
-    <ion-avatar item-left>
-      <img src="assets/images/slide1.jpg" alt="">
-    </ion-avatar>
-    <h2>台湾SOFINA苏菲娜芯美颜保湿日间防护乳防晒霜女SPF50蓝小花32ml</h2>
-    <h4>上海</h4>
-    <p>
-      <em>
-        <b>¥<i>155</i></b>
-        <span>1111人付款</span>
-      </em>
-      <span><ion-icon name="ios-more"></ion-icon></span>
-    </p>
-  </ion-item>
-</ion-list>
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{goodsType.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list id="listBorder">
+    <ion-item (click)="goodsDetail(goods)" *ngFor="let goods of listGoods">
+      <ion-avatar item-left>
+        <img src="{{goods.firstImage}}" alt="">
+      </ion-avatar>
+      <h2>{{goods.goodsDesc}}</h2>
+      <p>
+        <em>
+          <b>¥<i>{{goods.money}}</i></b>
+          <span>{{goods.userBuyNum}}人付款</span>
+        </em>
+        <span><ion-icon name="ios-more"></ion-icon></span>
+      </p>
+    </ion-item>
+  </ion-list>
+</ion-content>

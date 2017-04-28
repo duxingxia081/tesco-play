@@ -1,22 +1,22 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component,OnInit } from '@angular/core';
+import { NavController} from 'ionic-angular';
+import {GoodsService} from "../../../providers/goods-service";
+import {GoodsDetailPage} from "../../goods-detail/goods-detail";
 
-/*
-  Generated class for the TypeOne page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-type-one',
   templateUrl: 'type-one.html'
 })
-export class TypeOnePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TypeOnePage');
+export class TypeOnePage implements OnInit {
+  listGoods:any;
+  constructor(public nav: NavController,private goodsService: GoodsService) {
   }
-
+  ngOnInit(): void {
+    this.goodsService.listGoods().then((list) => {
+      this.listGoods = list;
+    });
+  }
+  goodsDetail(goods:any): void {
+    this.nav.push(GoodsDetailPage,{goods:goods});
+  }
 }
