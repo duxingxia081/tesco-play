@@ -1,11 +1,5 @@
 <ion-slides #mySlider [options]="mySlideOptions" pager="true" loop="true">
-  <ion-slide>
-    <img src="assets/images/slide1.jpg" />
-  </ion-slide>
-  <ion-slide>
-    <img src="assets/images/slide2.jpg" />
-  </ion-slide>
-  <ion-slide>
-    <img src="assets/images/slide3.jpg" />
+  <ion-slide *ngFor="let imgs of listGoodsImgs">
+    <img src="{{imgs}}" />
   </ion-slide>
 </ion-slides>

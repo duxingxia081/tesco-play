@@ -15,7 +15,6 @@ export class GoodsPage implements OnInit {
   constructor(public navCtrl: NavController, public navParams: NavParams,public popoverCtrl: PopoverController,private goodsService: GoodsService) {
   }
   ngOnInit(): void {
-    console.log(this.goods);
     this.goodsService.getGoodsData("/goods/countGoodsEvaluate&goodsId="+this.goods.goodsId).then((count) => {
       this.countGoodsEvaluate = count;
     });
