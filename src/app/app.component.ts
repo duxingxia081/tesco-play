@@ -1,9 +1,10 @@
 import {Component, ViewChild, OnInit} from "@angular/core";
 import {Nav, Platform, NavController} from "ionic-angular";
-import {StatusBar, Splashscreen} from "ionic-native";
 import {TabsPage} from "../pages/tabs/tabs";
 import {GoodsService} from "../providers/goods-service";
 import {GoodsListPage} from "../pages/goods-list/goods-list";
+import {StatusBar} from "@ionic-native/status-bar";
+import { SplashScreen } from '@ionic-native/splash-screen';
 @Component({
   templateUrl: 'app.html'
 })
@@ -13,7 +14,7 @@ export class MyApp implements OnInit {
   rootPage = TabsPage;
 
   pages: Array<{goodsType: any, component: any}> = new Array();
-  constructor(public platform: Platform,private goodsService: GoodsService) {
+  constructor(public platform: Platform,private goodsService: GoodsService,public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
   }
   ngOnInit(): void {
@@ -34,8 +35,8 @@ export class MyApp implements OnInit {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      StatusBar.styleDefault();
-      Splashscreen.hide();
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
     });
   }
 }

@@ -1,5 +1,9 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { BrowserModule } from '@angular/platform-browser';
+import {HttpModule} from "@angular/http";
+import {StatusBar} from "@ionic-native/status-bar";
+import {SplashScreen} from "@ionic-native/splash-screen";
 
 import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -23,7 +27,7 @@ import {GoodsTypeService} from "../providers/goods-type-service";
 import { AccountPage } from '../pages/account/account';
 import {HttpService} from "../providers/http-service";
 import {StorageService} from "../providers/storage-service";
-import {GoodsService} from "../providers/goods-service"
+import {GoodsService} from "../providers/goods-service";
 
 @NgModule({
   declarations: [
@@ -48,6 +52,8 @@ import {GoodsService} from "../providers/goods-service"
 
   ],
   imports: [
+    HttpModule,
+    BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -71,6 +77,6 @@ import {GoodsService} from "../providers/goods-service"
     OrderPage,
     SettingsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},HttpService,StorageService,GoodsService]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},StatusBar,HttpService,StorageService,GoodsService,SplashScreen]
 })
 export class AppModule {}

@@ -13,10 +13,7 @@ export class BillboardsPage implements OnInit {
     }
 
     @ViewChild('mySlider') slider: Slides;
-    mySlideOptions = {
-        autoplay: 2000,
-        speed: 300
-    };
+
     ngAfterContentInit():void
     {
 
