@@ -1,6 +1,5 @@
 import {Component, ViewChild,OnInit, Input} from '@angular/core';
 import {Slides} from 'ionic-angular';
-import {GoodsService} from "../../../providers/goods-service";
 //注入轮播
 
 @Component({

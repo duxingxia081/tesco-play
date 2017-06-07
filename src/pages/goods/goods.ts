@@ -1,5 +1,5 @@
 import { Component,Output,EventEmitter,Input, OnInit } from '@angular/core';
-import { NavController, NavParams,PopoverController } from 'ionic-angular';
+import { PopoverController } from 'ionic-angular';
 import { PopoverPage } from '../PopoverPage/PopoverPage';
 import {GoodsService} from "../../providers/goods-service";
 

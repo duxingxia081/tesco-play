@@ -23,8 +23,6 @@ import { CartPage } from '../pages/cart/cart';
 import { PersonPage } from '../pages/person/person';
 import { SettingsPage } from '../pages/settings/settings';
 import { OrderPage } from '../pages/order/order';
-import {GoodsTypeService} from "../providers/goods-type-service";
-import { AccountPage } from '../pages/account/account';
 import {HttpService} from "../providers/http-service";
 import {StorageService} from "../providers/storage-service";
 import {GoodsService} from "../providers/goods-service";
